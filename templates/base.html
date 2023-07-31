@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Marcus's Recipe Web App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 <body>
     <nav>
-      will add my navigation links here
+      <a href="{{ url_for('recipes') }}">Recipes</a>
     </nav>
     {% block content %}
     {% endblock %}

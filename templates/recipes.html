@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="recipes">
+        {% for recipe in recipes %}
+            <div class="recipe">
+                <img src="{{ url_for('static', filename=recipe['Image Link']) }}" alt="{{ recipe['Recipe Name'] }}">
+                <h2>{{ recipe['Recipe Name'] }}</h2>
+                <p>Ingredients: {{ recipe['Ingredients'] }}</p>
+                <p>Preparation: {{ recipe['Preparation Instructions'] }}</p>
+                <p>Serving: {{ recipe['Serving Instructions'] }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
