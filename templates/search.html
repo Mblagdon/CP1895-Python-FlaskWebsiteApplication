@@ -5,29 +5,36 @@ Search Recipes!
 {% endblock %}
 
 {% block H1_Description %}
-This is the search recipe page!
+<br><br>
+<h1 class="page-title">Search Recipes!</h1>
 {% endblock %}
 
 {% block H1_Content %}
-This page of Marcus' Recipe Website allows you to search for a recipe by searching a name of ingredient on the website!
+    <br>
+    <h2 class="greeting">This page of Marcus' Recipe Website allows you to search for a recipe by searching a name of ingredient on the website!</h2>
+    <br>
 {% endblock %}
 
 {% block content %}
-    <h1>Search Recipes</h1>
-    <form action="{{ url_for('search_recipes') }}" method="get">
-        <label for="search">Search by Name or Ingredient:</label>
+    <h1 class="search-title">Search Recipes</h1>
+    <form action="{{ url_for('search_recipes') }}" method="get" class="search-form">
+        <label class="search-label" for="search">Search by Name or Ingredient:</label>
         <input type="text" id="search" name="search">
         <input type="submit" value="Search">
+        <br><br><br>
     </form>
     <div class="recipes">
         {% for recipe in recipes %}
             <div class="recipe">
                 <img src="{{ url_for('static', filename=recipe['Image Link']) }}" alt="{{ recipe['Recipe Name'] }}">
                 <h2>{{ recipe['Recipe Name'] }}</h2>
-                <p>Ingredients: {{ recipe['Ingredients'] }}</p>
-                <p>Preparation: {{ recipe['Preparation Instructions'] }}</p>
-                <p>Serving: {{ recipe['Serving Instructions'] }}</p>
+                <div class="recipe-details">
+                    <p><strong class="underline">Ingredients:</strong> {{ recipe['Ingredients'] }}</p>
+                    <p><strong class="underline">Preparation:</strong> {{ recipe['Preparation Instructions'] }}</p>
+                    <p><strong class="underline">Serving:</strong> {{ recipe['Serving Instructions'] }}</p>
+                </div>
             </div>
         {% endfor %}
     </div>
 {% endblock %}
+{% block body_class %}search-recipe-background{% endblock %}

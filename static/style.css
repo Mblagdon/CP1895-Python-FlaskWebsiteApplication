@@ -40,6 +40,10 @@ input, textarea {
     background-color: #888888;
 }
 
+.add-recipe-background {
+    background-color: #888888;
+}
+
 .greeting {
     text-align: center;
     color: black;
@@ -131,4 +135,71 @@ footer {
     display: inline-block;
     max-width: 100%;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /
+}
+
+/* Style for the form-group container */
+.form-group {
+    display: flex; /* Use flex layout to align the elements */
+    align-items: center; /* Center-align the items vertically */
+    margin-bottom: 10px; /* Add some margin below each group */
+}
+
+/* Style for the labels inside the form-group container */
+.form-group label {
+    flex: 0 0 200px; /* Set a fixed width for the labels */
+    font-weight: bold; /* Make the text bold */
+    color: darkred;
+}
+
+/* Style for the text input and textarea elements inside the form-group container */
+.form-group input,
+.form-group textarea {
+    flex: 1; /* Allow the input to take up the remaining space */
+    max-width: 500px;
+    border: 3px solid darkred;
+    border-radius: 10px;
+}
+
+/* Style for the form container */
+.form-container {
+    max-width: 600px; /* Set a maximum width for the form */
+    margin: 0 auto; /* Center the form horizontally */
+}
+
+
+/* Style for the "Remove a Recipe" title */
+.remove-title {
+    text-align: center; /* Center the text */
+    color: darkred;
+    font-style: italic;
+}
+
+/* Style for the recipe names */
+.recipe-name {
+    font-size: 30px; /* Set the font size */
+    font-weight: bold; /* Make the text bold */
+    color: black;
+}
+
+.remove-recipe-background {
+    background-color: #888888;
+}
+
+/* Style for the "Search Recipes" title */
+.search-title {
+    text-align: center;
+    color: darkred;
+    font-style: italic;
+}
+
+/* Style for the search form */
+.search-form {
+    text-align: center; /* Center the form elements */
+    font-size: 20px; /* Set the font size */
+    font-weight: bold; /* Make the text bold */
+    color: black;
+}
+
+.search-recipe-background {
+    background-color: #888888;
 }

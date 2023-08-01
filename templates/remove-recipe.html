@@ -5,21 +5,26 @@ Remove Recipes!
 {% endblock %}
 
 {% block H1_Description %}
-This is the remove recipe page!
+<br><br>
+<h1 class="page-title">Remove Recipes!</h1>
 {% endblock %}
 
 {% block H1_Content %}
-This page of Marcus' Recipe Website allows you to remove a recipe from the website!
+    <br>
+    <h2 class="greeting">This page of Marcus' Recipe Website allows you to remove a recipe from the website!</h2>
+    <br>
 {% endblock %}
 
 {% block content %}
-    <h1>Remove a Recipe</h1>
+    <h1 class="remove-title">Remove a Recipe</h1>
     <form action="{{ url_for('remove_recipe') }}" method="post">
         {% for recipe in recipes %}
             <div class="recipe">
-                <p>{{ recipe['Recipe Name'] }}</p>
+                <p><strong class="recipe-name">{{ recipe['Recipe Name'] }}</strong></p>
                 <button type="submit" name="remove" value="{{ recipe['Recipe Name'] }}">Remove</button>
             </div>
         {% endfor %}
     </form>
 {% endblock %}
+
+{% block body_class %}remove-recipe-background{% endblock %}
