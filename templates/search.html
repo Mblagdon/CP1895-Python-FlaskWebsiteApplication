@@ -1,17 +1,22 @@
+<!-- Extend the base template -->
 {% extends "base.html" %}
 
+<!-- Set the page title -->
 {% block page_title %}
 Search Recipes!
 {% endblock %}
 
+<!-- Set the H1 description -->
 {% block H1_Description %}
 <h1 class="page-title text-center">Search Recipes!</h1>
 {% endblock %}
 
+<!-- Set the H1 content -->
 {% block H1_Content %}
 <h2 class="greeting text-center">This page of Marcus' Recipe Website allows you to search for a recipe by searching a name or ingredient on the website!</h2>
 {% endblock %}
 
+<!-- Set the main content of page -->
 {% block content %}
 <div class="container">
     <h1 class="search-title text-center">Search Recipes</h1>
@@ -39,4 +44,5 @@ Search Recipes!
     </div>
 </div>
 {% endblock %}
+
 {% block body_class %}search-recipe-background{% endblock %}

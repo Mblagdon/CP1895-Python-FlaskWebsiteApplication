@@ -1,13 +1,15 @@
+# Import libraries
 import os
 import csv
 import pandas as pd
 from flask import Flask, render_template, url_for
 from flask import request, redirect
 
-
+# Creat Flask app
 app = Flask(__name__)
 
 
+# Route for displaying recipes
 @app.route('/recipes')
 def recipes():
     # Read CSV file using Pandas
@@ -20,11 +22,13 @@ def recipes():
     return render_template('recipes.html', recipes=recipes)
 
 
+# Route for the home page
 @app.route('/')
 def home():
     return render_template('home.html')
 
 
+# Route for adding a new recipe
 @app.route('/add-recipe', methods=['GET', 'POST'])
 def add_recipe():
     if request.method == 'POST':
@@ -48,6 +52,7 @@ def add_recipe():
     return render_template('add-recipe.html')
 
 
+# Route for removing a recipe
 @app.route('/remove-recipe', methods=['GET', 'POST'])
 def remove_recipe():
     if request.method == 'POST':
@@ -62,6 +67,7 @@ def remove_recipe():
         return render_template('remove-recipe.html', recipes=recipes)
 
 
+# Route for searching recipes
 @app.route('/search', methods=['GET'])
 def search_recipes():
     search_query = request.args.get('search', '')
@@ -78,5 +84,6 @@ def search_recipes():
     return render_template('search.html', recipes=recipes)
 
 
+# Start the Flask app with debugging enabled
 if __name__ == '__main__':
     app.run(debug=True)
