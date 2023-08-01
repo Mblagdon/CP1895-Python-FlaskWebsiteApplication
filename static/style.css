@@ -79,6 +79,10 @@ footer {
     font-style: italic;
 }
 
+.recipe-background {
+    background-color: #888888;
+}
+
 /* Style for the recipe container */
 .recipe {
     text-align: center; /* Center the text and image */
@@ -91,4 +95,38 @@ footer {
     height: auto;
     display: block;
     margin: 0 auto;
+}
+
+/* Style for the recipe name (h2) inside the recipe container */
+.recipe h2 {
+    font-size: 30px;
+    color: darkred;
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Style for the paragraphs (p) inside the recipe container */
+.recipe p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+    text-align: center;
+    padding: 0 10px;
+}
+
+/* Style for the strong elements inside the recipe container */
+.recipe p strong {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Style for the recipe-details container inside the recipe */
+.recipe .recipe-details {
+    background-color: white; /* Set the background color to white */
+    border: 1px solid #ccc; /* Add a border around the box */
+    padding: 10px; /* Add padding inside the box */
+    display: inline-block; /* Make the box fit the content width */
+    max-width: 100%; /* Prevent the box from exceeding the container width */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow */
 }

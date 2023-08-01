@@ -22,10 +22,14 @@ Recipes!
                 <br><br>
                 <img src="{{ url_for('static', filename=recipe['Image Link']) }}" alt="{{ recipe['Recipe Name'] }}">
                 <h2>{{ recipe['Recipe Name'] }}</h2>
-                <p>Ingredients: {{ recipe['Ingredients'] }}</p>
-                <p>Preparation: {{ recipe['Preparation Instructions'] }}</p>
-                <p>Serving: {{ recipe['Serving Instructions'] }}</p>
+                <div class="recipe-details">
+                    <p><strong>Ingredients:</strong> {{ recipe['Ingredients'] }}</p>
+                    <p><strong>Preparation:</strong> {{ recipe['Preparation Instructions'] }}</p>
+                    <p><strong>Serving:</strong> {{ recipe['Serving Instructions'] }}</p>
+                </div>
             </div>
         {% endfor %}
     </div>
 {% endblock %}
+
+{% block body_class %}recipe-background{% endblock %}
