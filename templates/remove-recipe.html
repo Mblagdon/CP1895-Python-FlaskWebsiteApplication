@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+Remove Recipes!
+{% endblock %}
+
+{% block H1_Description %}
+This is the remove recipe page!
+{% endblock %}
+
+{% block H1_Content %}
+This page of Marcus' Recipe Website allows you to remove a recipe from the website!
+{% endblock %}
+
+{% block content %}
+    <h1>Remove a Recipe</h1>
+    <form action="{{ url_for('remove_recipe') }}" method="post">
+        {% for recipe in recipes %}
+            <div class="recipe">
+                <p>{{ recipe['Recipe Name'] }}</p>
+                <button type="submit" name="remove" value="{{ recipe['Recipe Name'] }}">Remove</button>
+            </div>
+        {% endfor %}
+    </form>
+{% endblock %}
