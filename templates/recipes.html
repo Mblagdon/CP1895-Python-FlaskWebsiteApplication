@@ -5,17 +5,21 @@ Recipes!
 {% endblock %}
 
 {% block H1_Description %}
-This is the recipe page!
+    <br><br><br>
+    <h1 class="page-title">Recipes!</h1>
 {% endblock %}
 
 {% block H1_Content %}
-This page of Marcus' Recipe Website allows you to look at the recipes on the website!
+    <br>
+    <h2 class="greeting">This page of Marcus' Recipe Website allows you to look at the recipes on the website!</h2>
+    <br>
 {% endblock %}
 
 {% block content %}
     <div class="recipes">
         {% for recipe in recipes %}
             <div class="recipe">
+                <br><br>
                 <img src="{{ url_for('static', filename=recipe['Image Link']) }}" alt="{{ recipe['Recipe Name'] }}">
                 <h2>{{ recipe['Recipe Name'] }}</h2>
                 <p>Ingredients: {{ recipe['Ingredients'] }}</p>

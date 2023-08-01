@@ -1,13 +1,26 @@
 {% extends "base.html" %}
 
 {% block page_title %}
-Marcus' Recipe Website
+Marcus' Recipes
 {% endblock %}
 
 {% block H1_Description %}
-Welcome to my website!
+    <br><br><br>
+    <h1 class="page-title">Welcome to my website!</h1>
 {% endblock %}
 
 {% block H1_Content %}
-Welcome to Marcus' Recipe website. Please use the menu above to navigate throughout the different web pages.
+    <br><br>
+<h2 class="greeting">Welcome to Marcus' Recipe website. Please use the menu above to navigate throughout the different web pages!</h2>
 {% endblock %}
+
+{% block content %}
+    <br><br><br>
+    <img class="home-page-image" src="{{ url_for('static', filename='recipe-word.jpg') }}" alt="Recipe word image">
+{% endblock %}
+
+{% block footer %}
+    <p>Marcus Blagdon - Student Number: 20099264</p>
+{% endblock %}
+
+{% block body_class %}home-page-background{% endblock %}
