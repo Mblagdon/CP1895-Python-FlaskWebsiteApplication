@@ -4,6 +4,9 @@ import csv
 import pandas as pd
 from flask import Flask, render_template, url_for
 from flask import request, redirect
+from werkzeug.utils import secure_filename
+from PIL import Image
+
 
 # Creat Flask app
 app = Flask(__name__)
@@ -32,16 +35,24 @@ def home():
 @app.route('/add-recipe', methods=['GET', 'POST'])
 def add_recipe():
     if request.method == 'POST':
-        # Retrieve form data
         recipe_name = request.form['name']
         image = request.files['image']
         ingredients = request.form['ingredients']
         preparation = request.form['preparation']
         serving = request.form['serving']
 
-        # Save the image to the static folder
-        image_filename = os.path.join('static', image.filename)
-        image.save(image_filename)
+        # Validate image file
+        image_filename = secure_filename(image.filename)
+        image_path = os.path.join('static', image_filename)
+        image.save(image_path)
+
+        # Check if the file is an image using Pillow
+        try:
+            with Image.open(image_path) as img:
+                img.verify()  # Verifies that the file is an image
+        except Exception:
+            os.remove(image_path)  # Remove the file if it's not an image
+            return "Invalid image file", 400  # Return an error response
 
         # Append the new recipe to the CSV file
         with open('recipes.csv', mode='a', newline='', encoding='utf-8') as file:
