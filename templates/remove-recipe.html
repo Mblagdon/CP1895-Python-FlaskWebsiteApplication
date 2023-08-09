@@ -25,6 +25,10 @@ Remove Recipes!
             {% endfor %}
         </div>
     </form>
+    <!-- Insert image below the recipes list -->
+    <div class="image-container text-center mt-5">
+        <img src="{{ url_for('static', filename='hanging-cookware.jpg') }}" alt="Hanging Cookware" class="img-fluid">
+    </div>
 </div>
 {% endblock %}
 
