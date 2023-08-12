@@ -1,0 +1,11 @@
+To set up and run the web app I:
+1. Ensured I had the latest python version being used
+2. Back my work to my github repository using:
+   https://github.com/Mblagdon/CP1895Project
+3. Navigated to my project directory:
+   cd /home/MBlagdon/CP1895Project
+4. Set up the virtual environment with windows
+5. Installed necessary libraries using `pip` (pip install Flask pandas Pillow)
+6. Ran my application.py
+7. Used the URL provided to view my website.
+
