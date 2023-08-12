@@ -41,6 +41,22 @@ def add_recipe():
         preparation = request.form['preparation']
         serving = request.form['serving']
 
+        # Validate recipe name
+        if not recipe_name or len(recipe_name) > 100:
+            return "Invalid recipe name", 400
+
+        # Validate ingredients
+        if not ingredients or len(ingredients) > 500:
+            return "Invalid ingredients", 400
+
+        # Validate preparation instructions
+        if not preparation or len(preparation) > 500:
+            return "Invalid preparation instructions", 400
+
+        # Validate serving instructions
+        if not serving or len(serving) > 100:
+            return "Invalid serving instructions", 400
+
         # Validate image file
         image_filename = secure_filename(image.filename)
         image_path = os.path.join('static', image_filename)
