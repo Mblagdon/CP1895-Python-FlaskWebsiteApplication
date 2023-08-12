@@ -43,19 +43,19 @@ def add_recipe():
 
         # Validate recipe name
         if not recipe_name or len(recipe_name) > 100:
-            return "Invalid recipe name, refresh and try again!", 400
+            return "Invalid recipe name, go back and try again!", 400
 
         # Validate ingredients
         if not ingredients or len(ingredients) > 500:
-            return "Invalid ingredients, refresh and try again!", 400
+            return "Invalid ingredients, go back and try again!", 400
 
         # Validate preparation instructions
         if not preparation or len(preparation) > 500:
-            return "Invalid preparation instructions, refresh and try again!", 400
+            return "Invalid preparation instructions, go back and try again!", 400
 
         # Validate serving instructions
         if not serving or len(serving) > 100:
-            return "Invalid serving instructions, refresh and try again!", 400
+            return "Invalid serving instructions, go back and try again!", 400
 
         # Validate image file
         image_filename = secure_filename(image.filename)
@@ -68,7 +68,7 @@ def add_recipe():
                 img.verify()  # Verifies that the file is an image
         except Exception:
             os.remove(image_path)  # Remove the file if it's not an image
-            return "Invalid image file, refresh and try again!", 400  # Return an error response
+            return "Invalid image file, go back and try again!", 400  # Return an error response
 
         # Append the new recipe to the CSV file
         with open('recipes.csv', mode='a', newline='', encoding='utf-8') as file:
